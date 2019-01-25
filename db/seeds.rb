@@ -8,15 +8,17 @@
 require 'csv'
 
 def insert_data
+  r = Random.new()
+
   (1..50).each do |num|
     Content.create!(
       name: 'テストだよ' + num.to_s,
       url: 'https://example.com/',
-      playback: "７分４５秒",
+      playback: '７分４５秒',
       view: num,
-      good: 10,
-      comment: 2,
-      post_time: "18/2/2"
+      good: r.rand(1000),
+      comment: r.rand(1000),
+      post_time: '18/' + (r.rand(12) + 1).to_s + '/' + (r.rand(31) + 1).to_s
     )
   end
 end
