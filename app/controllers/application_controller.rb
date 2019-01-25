@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :render_503_except_for_whitelisted_ips, if: :maintenance_mode?
   protect_from_forgery with: :exception
-  http_basic_authenticate_with :name => ENV['BASIC_AUTH_USERNAME'], :password => ENV['BASIC_AUTH_PASSWORD'] if Rails.env == "production"
+  # http_basic_authenticate_with :name => ENV['BASIC_AUTH_USERNAME'], :password => ENV['BASIC_AUTH_PASSWORD'] if Rails.env == "production"
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
   rescue_from ActionController::RoutingError, with: :render_404
