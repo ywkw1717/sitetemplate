@@ -53,3 +53,5 @@ gem 'rails-i18n'
 gem 'audiojs-rails'
 
 gem 'rename'
+
+gem 'rails_12factor', group: :production
