@@ -34,6 +34,6 @@ csv_data.each do |data|
   )
 end
 
-AdminUser.create!(email: 'admin@example.com', password: 'passwordpassword', password_confirmation: 'password') if Rails.env.development?
-
-AdminUser.create!(email: ENV['ADMIN_EMAIL_PRODUCTION'], password: ENV['ADMIN_PASSWORD_PRODUCTION'], password_confirmation: ENV['ADMIN_PASSWORD_PRODUCTION']) if Rails.env.production?
+# AdminUser.create!(email: 'admin@example.com', password: 'passwordpassword', password_confirmation: 'password') if Rails.env.development?
+#
+# AdminUser.create!(email: ENV['ADMIN_EMAIL_PRODUCTION'], password: ENV['ADMIN_PASSWORD_PRODUCTION'], password_confirmation: ENV['ADMIN_PASSWORD_PRODUCTION']) if Rails.env.production?
