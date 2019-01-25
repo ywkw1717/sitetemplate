@@ -54,4 +54,4 @@ gem 'audiojs-rails'
 
 gem 'rename'
 
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
