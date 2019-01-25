@@ -1,0 +1,12 @@
+<% @serifs.each do |serif| %>
+  <li>
+    <div class="title"><%= serif.title %></div>
+    <div class="info">
+        <div class="serif-content">
+          <audio src="/audios/<%= serif.filename %>" preload="auto" />
+        </div>
+        <div class="source">
+          <p>text text text text text text text text text text text</p>
+        </div>
+    </div>
+  <% end %>

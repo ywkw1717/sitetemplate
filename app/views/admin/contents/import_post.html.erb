@@ -1,0 +1,11 @@
+<%= form_tag({action: :import_post}, multipart: true) do %>
+  <div><%= text_field_tag :post_num, nil, class: "import_form" %></div>
+  <%= submit_tag "Upload Post" %>
+<% end %>
+
+<style type="text/css">
+form input[type=text] {
+  width: 100px;
+  margin-bottom: 10px;
+}
+</style>

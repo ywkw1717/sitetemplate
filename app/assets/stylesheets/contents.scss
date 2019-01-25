@@ -1,0 +1,233 @@
+// Place all the styles related to the Contents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div .contents {
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    font-family: sans-serif;
+  }
+}
+
+select {
+  -webkit-appearance:button;
+  -moz-appearance:button;
+  appearance:button;
+}
+
+.select_order {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  color: #FFF;
+  background: #a1b1ca;
+  transition: .4s;
+  border-color: #a1b1ca;
+}
+
+.contents-list {
+  text-align: center;
+  margin: 0 auto;
+  list-style-type: none;
+
+  a {
+    color: #774535;
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .name {
+    font-size: 1.2em;
+    padding-top: 10px;
+  }
+
+  .view {
+    padding-right: 10px;
+    display: inline-block;
+    padding: 0 1rem 0 0;
+  }
+
+  .good {
+    padding-right: 10px;
+    display: inline-block;
+    padding: 0 1rem 0 0;
+  }
+
+  .comment {
+    padding-right: 40px;
+    display: inline-block;
+    padding: 0 1rem 0 0;
+  }
+
+  .post-time {
+    display: inline-block;
+    padding: 0 1rem 0 0;
+  }
+}
+
+
+.contents-list {
+  counter-reset:list;
+  list-style-type:none;
+  font: 14px/1.6 'arial narrow', sans-serif;
+  padding:0;
+}
+
+.contents-list li{
+  position:relative;
+  margin: 7px 0 7px 0px;
+  padding-left:40px;
+  font-size:14px;
+  line-height: 30px;
+  border: solid 1px #a1b1ca;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.contents-list li:before{
+  position: absolute;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #fff;
+  line-height:30px;
+  background: #a1b1ca;
+  border-radius: 50%;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.contents-list li:hover{
+  background: #a1b1ca;
+  color: #fff;
+}
+
+.contents-list li:hover:before{
+  background: #fff;
+  color: #a1b1ca;
+}
+
+
+/** Fifth Design Pagination (dark) **/
+.pagination { /* fifth page styles */
+  font-size: 1.4em;
+  padding: 9px 8px;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: table !important;
+  margin: 40px auto 0 auto !important;
+}
+
+.pagination span { font-weight: bold; }
+
+.pagination span a {
+  display: block;
+  float: left;
+  color: #f7deaf;
+  text-decoration: none;
+  padding: 5px 12px;
+  margin-right: 6px;
+  border-radius: 22px;
+  background: #fff;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+// spring
+// .pagination span a:hover { // first, last
+//   color: #4f664e;
+//   background: #c9dec8;
+// }
+
+// summer
+.pagination span a:hover { // first, last
+  color: #fff;
+  background: #a1b1ca;
+}
+.pagination span a:active {
+  -webkit-box-shadow: 1px 1px 3px -1px rgba(0,0,0, .55);
+  -moz-box-shadow: 1px 1px 3px -1px rgba(0,0,0, .55);
+  box-shadow: 1px 1px 3px -1px rgba(0,0,0, .55);
+}
+
+.pagination span.page a {
+  padding: 5px 13px;
+  background: #525457; // azuki
+  color: #fff;
+}
+.pagination span.page a:hover {
+  color: #fff;
+  background: #525457;
+}
+
+.pagination span.current { background: #a1b1ca; }
+.pagination span.single, .pagination span.current {
+  display: block;
+  float: left;
+  padding: 4px 12px;
+  margin-right: 6px;
+  border-radius: 16px;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .pagination {
+    font-size: 1.2em;
+  }
+  .pagination span a {
+    padding: 9px 12px;
+  }
+  .pagination span.page a {
+    padding: 10px 16px;
+  }
+  .pagination span.single, .pagination span.current {
+    padding: 9px 15px;
+    border-radius: 24px;
+  }
+
+  .contents-list .name {
+    text-align: left;
+  }
+
+  .contents-list .info {
+    font-size: 0.8em;
+    text-align: left;
+  }
+
+  .contents-list .view {
+    padding-right: 4px;
+  }
+
+  .contents-list .good {
+    padding-right: 4px;
+  }
+
+  .contents-list .comment {
+    padding-right: 20px;
+  }
+}

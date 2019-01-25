@@ -1,0 +1,2 @@
+class Serif < ApplicationRecord
+end

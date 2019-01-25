@@ -1,0 +1,13 @@
+<% @contents.each do |content| %>
+  <%= link_to content.url do %>
+    <li>
+      <div class="name"><%= content.name %></div>
+      <div class="info">
+        <div class="playback">再生時間：<%= content.playback%></div>
+        <div class="view">再生回数：<%= content.view %></div>
+        <div class="good">いいね：<%= content.good %></div>
+        <div class="comment">コメント：<%= content.comment %></div>
+        <div class="post-time"><%= content.post_time %></div>
+      </div>
+    <% end %>
+  <% end %>

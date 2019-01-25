@@ -1,0 +1,150 @@
+// Place all the styles related to the SerifCollections controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .audiojs {
+//   background: #a1b1ca;
+// }
+//
+// .audiojs .time {
+//   color: #000;
+// }
+//
+// .audiojs .time em {
+//   color: #000;
+// }
+
+.serif-top {
+  display: flex;
+}
+
+.serif-top a {
+  display: block;
+  margin: 23px 0 6px 14px;
+  padding: 3px 4px 0 4px;
+  color: #fff;
+  background: #f7deaf;
+  border-radius: 4px;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+    background: #f7deaf;
+    border-radius: 4px;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
+
+.serif-content {
+  display: inline-block;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .audiojs { width: 100%; }
+  .audiojs .play-pause { width: 40px; }
+  .audiojs .scrubber { width: 45%; }
+}
+
+.serifs-list {
+  text-align: center;
+  margin: 0 auto;
+  list-style-type: none;
+
+  a {
+    color: #774535;
+
+    &:hover {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+
+    &:active {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+
+  .title {
+    font-size: 1.2em;
+    padding-top: 10px;
+  }
+}
+
+.serifs-list {
+  counter-reset:list;
+  list-style-type:none;
+  font: 14px/1.6 'arial narrow', sans-serif;
+  padding:0;
+}
+
+.serifs-list li{
+  position:relative;
+  margin: 7px 0 7px 0px;
+  padding-left:30px;
+  font-size:14px;
+  line-height: 30px;
+  border: solid 1px #a1b1ca;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.serifs-list li:before{
+  position: absolute;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #fff;
+  line-height:30px;
+  background: #a1b1ca;
+  border-radius: 50%;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .pagination {
+    font-size: 1.2em;
+  }
+  .pagination span a {
+    padding: 9px 12px;
+  }
+  .pagination span.page a {
+    padding: 10px 16px;
+  }
+  .pagination span.single, .pagination span.current {
+    padding: 9px 15px;
+    border-radius: 24px;
+  }
+
+  .serifs-list .title {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .serifs-list .source {
+    font-size: 0.8em;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .serif-content {
+    display: inline;
+    text-align: left;
+  }
+
+  .serifs-list li{
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:5px;
+  }
+}

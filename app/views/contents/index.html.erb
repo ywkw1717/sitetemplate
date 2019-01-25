@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120262423-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-120262423-1');
+    </script>
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>sitetemplate</title>
+
+    <!--** jQuery **-->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+
+    <!--** Bootstrap **-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!--** other CSS **-->
+    <!--<link rel="stylesheet" type="text/css" href="example.css">-->
+    <style type="text/css">
+    </style>
+
+    <!--** other JavaScript **-->
+    <!--<script type="text/javascript" src="example.js"></script>-->
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <div class="header-inner">
+          <h1 class="header-logo"><a href="/">
+              <%= image_tag "sitetemplate-logo-small.png", :alt => "sitetemplate" %>
+            </a></h1>
+            <button class="menu-btn" id="mobile-menu"></button>
+        </div>
+      </div>
+      </div>
+    </header>
+
+    <nav>
+      <div class="container nav-container">
+        <ul class="navbar">
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/contents">過去投稿</a></li>
+          <li><a href="/serif_collections">セリフ集</a></li>
+          <li><a href="/about">このサイトについて</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="main">
+      <div class="container">
+        <main>
+        <div class="contents">
+          <h1>過去投稿まとめ(´･_･`)</h1>
+          <div class="select-wrap">
+            <%= select_tag "order_options", options_for_select(Content::ORDER_OPTIONS, session[:order]), :class => "select_order" %>
+          </div>
+          <ol class="contents-list">
+            <div id="contents">
+              <%= render 'content' %>
+            </div>
+          </ol>
+
+          <div id="paginator">
+            <%= render 'paginator', remote: true %>
+        </div>
+        </main>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-container">
+        <ul class="footer-nav">
+          <li><a href="/contents">過去投稿</a></li>
+          <li><a href="/serif_collections">セリフ集</a></li>
+          <li><a href="/about">このサイトについて</a></li>
+        </ul>
+        <p class="footer-copyright">
+        <%= image_tag "sitetemplate-logo-small.png", :alt => "sitetemplate" %>
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script type="text/javascript">
+(function($){
+  $('#mobile-menu').on('click', function(){
+    $('.navbar').slideToggle()
+  })
+})(jQuery);
+  </script>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120262423-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-120262423-1');
+    </script>
+
+    <meta name="robots" content="noindex,nofollow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sitetemplate</title>
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--** jQuery **-->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+
+    <!--** Bootstrap **-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  </head>
+  <body>
+    <div class="animation-container">
+      <div id="slider">
+        <div class="animation-image"></div>
+        <div class="animation-image"></div>
+        <div class="animation-image"></div>
+        <div class="animation-image"></div>
+        <div class="animation-image"></div>
+        <div class="animation-paint">
+          <div class="animation-div1"></div>
+          <div class="animation-div2"></div>
+          <div class="animation-div3"></div>
+          <div class="animation-div4"></div>
+        </div>
+      </div>
+      <div class="last-message">
+        text text text text text text
+      </div>
+    </div>
+    <div class="all-elements">
+      <header>
+        <div class="container header-container">
+          <div class="header-inner">
+            <h1 class="header-logo"><a href="/">
+                <%= image_tag "sitetemplate-logo-small.png", :alt => "sitetemplate" %>
+              </a></h1>
+              <button class="menu-btn" id="mobile-menu"></button>
+          </div>
+        </div>
+      </header>
+
+      <nav>
+        <div class="container nav-container">
+          <ul class="navbar">
+            <li><a href="/">ホーム</a></li>
+            <li><a href="/contents">過去投稿</a></li>
+            <li><a href="/serif_collections">セリフ集</a></li>
+            <li><a href="/about">このサイトについて</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="main">
+        <div class="background-top"></div>
+        <div class="container">
+          <main>
+          <div class="new">
+            <h3>新着投稿_(:3 」∠)_</h3>
+            <ol class="new-content">
+              <% new_post.each do |content| %>
+                <%= link_to content.url do %>
+                  <li>
+                    <div class="name"><%= content.name %></div>
+                    <div class="info">
+                      <div class="view">再生時間：<%= content.playback%></div>
+                      <div class="post-time"><%= content.post_time %></div>
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
+            </ol>
+          </div>
+
+          <div class="popular">
+            <h3>人気投稿(*´・ω・)</h3>
+            <div class="popular-contents">
+              <ol class="post-top3">
+                <% top3.each_with_index do |content, index| %>
+                  <%= link_to content.url do %>
+                    <li>
+                      <div class="maru size color">
+                        <div class="rank"><%= index+1 %></div>
+                      </div>
+                      <div class="name"><%= content.name %></div>
+                      <div class="info">
+                        <div class="playback">再生時間：<%= content.playback%></div>
+                        <div class="view">再生回数：<%= content.view %></div>
+                        <div class="good">いいね：<%= content.good %></div>
+                        <div class="comment">コメント：<%= content.comment %></div>
+                        <div class="post-time"><%= content.post_time %></div>
+                      </div>
+                    </li>
+                  <% end %>
+                <% end %>
+              </ol>
+            </div>
+          </div>
+
+          <div class="useful-button">
+            <h3 class="past-posts">
+              <a href="/contents" class="square_btn">
+                <i class="fa fa-chevron-right"></i> 過去の投稿を見る
+              </a>
+            </h3>
+            <h3 class="serif-collections">
+              <a href="/serif_collections" class="square_btn">
+                <i class="fa fa-chevron-right"></i> セリフ集
+              </a>
+            </h3>
+            <h3 class="about-site">
+              <a href="/about" class="square_btn">
+                <i class="fa fa-chevron-right"></i> このサイトについて
+              </a>
+            </h3>
+          </div>
+          </main>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container footer-container">
+          <ul class="footer-nav">
+            <li><a href="/contents">過去投稿</a></li>
+            <li><a href="/serif_collections">セリフ集</a></li>
+            <li><a href="/about">このサイトについて</a></li>
+          </ul>
+          <p class="footer-copyright">
+          <%= image_tag "sitetemplate-logo-small.png", :alt => "sitetemplate" %>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script type="text/javascript">
+$(function(){
+    $(".animation-container").on('webkitAnimationStart', function(){
+      // no scroll
+      $(window).on('touchmove.noScroll', function(e) {
+        e.preventDefault();
+      });
+      $('body').css('overflow', 'hidden');
+
+      // scroll top
+      $(function() {
+        $('html,body').animate({ scrollTop: 0 }, '1');
+      });
+    });
+    $(".last-message").on('webkitAnimationEnd', function(){
+      $(window).off('.noScroll');
+      $('body').css('overflow', '');
+    });
+});
+
+// $(function(){
+//   $("*, *:before, *:after").css('animation', 'none !important');
+//   $(".all-elements").css('opacity', '1.0');
+// }
+
+(function($){
+  $('#mobile-menu').on('click', function(){
+    $('.navbar').slideToggle()
+  })
+})(jQuery);
+  </script>
+</html>

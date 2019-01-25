@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sitetemplate</title>
+      <meta property="og:title" content="example.com" />
+      <meta property="og:url" content="https://example.com/" />
+      <meta property="og:description" content="sitetemplate" />
+      <meta property="og:site_name"  content="example.com" />
+      <meta property="og:image" content="https://example.com/logo.jpg" />
+      <meta property="twitter:card" content="summary">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

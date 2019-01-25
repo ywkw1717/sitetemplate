@@ -1,0 +1,2 @@
+module SerifCollectionsHelper
+end
