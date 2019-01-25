@@ -47,7 +47,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'activeadmin'
-gem 'devise'
+# gem 'devise'
 gem 'rails-i18n'
 
 gem 'audiojs-rails'
