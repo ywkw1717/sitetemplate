@@ -21,7 +21,8 @@ def insert_data
   end
 end
 
-insert_data if Rails.env.development?
+# insert_data if Rails.env.development?
+insert_data
 
 csv_data = CSV.read('db/uniq_list.csv', headers: true)
 
